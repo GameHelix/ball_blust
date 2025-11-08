@@ -58,6 +58,25 @@ export default async function Home() {
         </div>
       </header>
 
+      {/* Category Navigation */}
+      {categories.length > 0 && (
+        <nav className="sticky top-0 bg-white border-b shadow-sm z-10">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="flex overflow-x-auto py-3 sm:py-4 gap-2 sm:gap-3 scrollbar-hide">
+              {categories.map((category) => (
+                <a
+                  key={category.id}
+                  href={`#category-${category.id}`}
+                  className="flex-shrink-0 px-4 py-2 rounded-full border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white transition-colors text-sm sm:text-base font-medium whitespace-nowrap"
+                >
+                  {category.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </nav>
+      )}
+
       {/* Menu */}
       <main className="container mx-auto px-4 py-8 max-w-7xl">
         {categories.length === 0 ? (
@@ -69,7 +88,7 @@ export default async function Home() {
         ) : (
           <div className="space-y-8 sm:space-y-12">
             {categories.map((category) => (
-              <section key={category.id} className="scroll-mt-4">
+              <section key={category.id} id={`category-${category.id}`} className="scroll-mt-20">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                   {category.name}
                 </h2>
