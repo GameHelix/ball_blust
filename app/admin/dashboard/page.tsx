@@ -9,9 +9,9 @@ export default async function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Dashboard</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Dashboard</h1>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div className="bg-white overflow-hidden shadow rounded-lg">
           <div className="p-5">
             <div className="flex items-center">
@@ -115,43 +115,43 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      <div className="mt-8 bg-white shadow rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="mt-6 sm:mt-8 bg-white shadow rounded-lg p-4 sm:p-6">
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">Quick Actions</h2>
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
           <a
             href="/admin/dashboard/categories"
-            className="block p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
+            className="block p-3 sm:p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
           >
-            <h3 className="font-medium text-gray-900">Manage Categories</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-medium text-gray-900 text-sm sm:text-base">Manage Categories</h3>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
               Add, edit, or remove menu categories
             </p>
           </a>
           <a
             href="/admin/dashboard/menu-items"
-            className="block p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
+            className="block p-3 sm:p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
           >
-            <h3 className="font-medium text-gray-900">Manage Menu Items</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-medium text-gray-900 text-sm sm:text-base">Manage Menu Items</h3>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
               Add, edit, or remove menu items
             </p>
           </a>
           <a
             href="/admin/dashboard/restaurant"
-            className="block p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
+            className="block p-3 sm:p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
           >
-            <h3 className="font-medium text-gray-900">Restaurant Settings</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-medium text-gray-900 text-sm sm:text-base">Restaurant Settings</h3>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
               Update restaurant info and logo
             </p>
           </a>
           <a
             href="/"
             target="_blank"
-            className="block p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
+            className="block p-3 sm:p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors"
           >
-            <h3 className="font-medium text-gray-900">View Public Menu</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-medium text-gray-900 text-sm sm:text-base">View Public Menu</h3>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
               See how your menu looks to customers
             </p>
           </a>

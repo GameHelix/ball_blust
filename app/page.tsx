@@ -26,30 +26,30 @@ export default async function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-center gap-4">
+        <div className="container mx-auto px-4 py-6 sm:py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             {restaurant?.logoUrl && (
               <Image
                 src={restaurant.logoUrl}
                 alt={restaurant.name}
                 width={80}
                 height={80}
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover w-16 h-16 sm:w-20 sm:h-20"
               />
             )}
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 {restaurant?.name || 'Our Restaurant'}
               </h1>
               {restaurant?.description && (
-                <p className="text-gray-600 mt-2">{restaurant.description}</p>
+                <p className="text-gray-600 mt-2 text-sm sm:text-base">{restaurant.description}</p>
               )}
             </div>
           </div>
           {restaurant && (
-            <div className="mt-4 text-center text-sm text-gray-600 space-y-1">
-              {restaurant.address && <p>{restaurant.address}</p>}
-              <div className="flex justify-center gap-4">
+            <div className="mt-4 text-center text-xs sm:text-sm text-gray-600 space-y-1">
+              {restaurant.address && <p className="px-2">{restaurant.address}</p>}
+              <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 px-2">
                 {restaurant.phone && <p>Tel: {restaurant.phone}</p>}
                 {restaurant.email && <p>Email: {restaurant.email}</p>}
               </div>
@@ -59,31 +59,31 @@ export default async function Home() {
       </header>
 
       {/* Menu */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 max-w-7xl">
         {categories.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
+            <p className="text-gray-500 text-base sm:text-lg">
               Menu coming soon...
             </p>
           </div>
         ) : (
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {categories.map((category) => (
               <section key={category.id} className="scroll-mt-4">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                   {category.name}
                 </h2>
                 {category.description && (
-                  <p className="text-gray-600 mb-6">{category.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{category.description}</p>
                 )}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {category.items.map((item) => (
                     <div
                       key={item.id}
                       className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                     >
                       {item.imageUrl && (
-                        <div className="relative h-48 w-full">
+                        <div className="relative h-40 sm:h-48 w-full">
                           <Image
                             src={item.imageUrl}
                             alt={item.name}
@@ -93,16 +93,16 @@ export default async function Home() {
                         </div>
                       )}
                       <div className="p-4">
-                        <div className="flex justify-between items-start mb-2">
-                          <h3 className="text-xl font-semibold text-gray-900">
+                        <div className="flex justify-between items-start mb-2 gap-2">
+                          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 flex-1">
                             {item.name}
                           </h3>
-                          <span className="text-lg font-bold text-blue-600">
+                          <span className="text-base sm:text-lg font-bold text-blue-600 whitespace-nowrap">
                             ${item.price.toFixed(2)}
                           </span>
                         </div>
                         {item.description && (
-                          <p className="text-gray-600 text-sm">
+                          <p className="text-gray-600 text-sm line-clamp-3">
                             {item.description}
                           </p>
                         )}
@@ -117,8 +117,8 @@ export default async function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t mt-12">
-        <div className="container mx-auto px-4 py-6 text-center text-gray-600">
+      <footer className="bg-white border-t mt-8 sm:mt-12">
+        <div className="container mx-auto px-4 py-6 text-center text-gray-600 text-xs sm:text-sm">
           <p>&copy; {new Date().getFullYear()} {restaurant?.name || 'Restaurant'}. All rights reserved.</p>
         </div>
       </footer>
