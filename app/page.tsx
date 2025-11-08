@@ -1,6 +1,9 @@
 import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 
+// Revalidate every 60 seconds
+export const revalidate = 60;
+
 export default async function Home() {
   const [restaurant, categories] = await Promise.all([
     prisma.restaurant.findFirst(),
